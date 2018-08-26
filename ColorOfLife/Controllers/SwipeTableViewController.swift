@@ -1,6 +1,6 @@
 //
 //  SwipeTableViewController.swift
-//  Todoey
+//  ColorOfLife
 //
 //  Created by Aaron Lam on 8/24/18.
 //  Copyright © 2018 Aaron Lam Developer. All rights reserved.
@@ -13,6 +13,7 @@ class SwipeTableViewController: UITableViewController, SwipeTableViewCellDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.rowHeight = 80.0
+        tableView.separatorStyle = .none
     }
     
     // TableView Datasource Methods

@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Todoey-->
+        <!--Set Your Goals!-->
         <scene sceneID="oiH-03-8HR">
             <objects>
                 <tableViewController id="H5i-UD-uKf" customClass="CategoryViewController" customModule="Todoey" customModuleProvider="target" sceneMemberID="viewController">
@@ -16,9 +16,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quote here" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="5" id="bhN-E5-9dz">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="52v-l5-9JL" customClass="SwipeTableViewCell" customModule="SwipeCellKit">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="52v-l5-9JL" id="haw-hk-I9V">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -31,7 +38,7 @@
                             <outlet property="delegate" destination="H5i-UD-uKf" id="7Ib-n4-QWS"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Todoey" id="ba8-Jw-MNb">
+                    <navigationItem key="navigationItem" title="Set Your Goals!" id="ba8-Jw-MNb">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Y8P-2j-EmB">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
@@ -40,6 +47,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="quoteLabel" destination="bhN-E5-9dz" id="B1K-6V-gcM"/>
+                        <outlet property="tableView" destination="Ss0-1r-Rue" id="3wO-3H-aO0"/>
                         <segue destination="j6t-Jb-wbE" kind="show" identifier="GoToItems" id="6TB-M2-Rrf"/>
                     </connections>
                 </tableViewController>
@@ -47,7 +56,7 @@
             </objects>
             <point key="canvasLocation" x="1281" y="134"/>
         </scene>
-        <!--Items-->
+        <!--Set your Steps!-->
         <scene sceneID="RHn-KO-ko0">
             <objects>
                 <tableViewController id="j6t-Jb-wbE" customClass="TodoListViewController" customModule="Todoey" customModuleProvider="target" sceneMemberID="viewController">
@@ -78,7 +87,7 @@
                             <outlet property="delegate" destination="j6t-Jb-wbE" id="LHl-tf-FAH"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Items" id="IbQ-CY-zix">
+                    <navigationItem key="navigationItem" title="Set your Steps!" id="IbQ-CY-zix">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="j8n-ta-Jol">
                             <connections>
                                 <action selector="addButtonPressed:" destination="j6t-Jb-wbE" id="OJL-4n-vAj"/>

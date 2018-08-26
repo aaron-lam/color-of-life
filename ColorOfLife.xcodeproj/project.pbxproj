@@ -24,7 +24,7 @@
 		4E36E0EC1124772B3420F571 /* Pods_Todoey.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Todoey.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		61BD699233454A4234D6F1FF /* Pods-Todoey.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Todoey.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Todoey/Pods-Todoey.debug.xcconfig"; sourceTree = "<group>"; };
 		E50BBFFA21312A2000943CBA /* SwipeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeTableViewController.swift; sourceTree = "<group>"; };
-		E5DBE199212E808E003AAB79 /* Todoey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Todoey.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5DBE199212E808E003AAB79 /* ColorOfLife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorOfLife.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5DBE19C212E808E003AAB79 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5DBE19E212E808E003AAB79 /* TodoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListViewController.swift; sourceTree = "<group>"; };
 		E5DBE1A1212E808E003AAB79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -68,7 +68,7 @@
 		E5DBE190212E808E003AAB79 = {
 			isa = PBXGroup;
 			children = (
-				E5DBE19B212E808E003AAB79 /* Todoey */,
+				E5DBE19B212E808E003AAB79 /* ColorOfLife */,
 				E5DBE19A212E808E003AAB79 /* Products */,
 				2AF7FC29CFEC473AD1E4644B /* Pods */,
 				1B783868CDA90EBBC77DAE03 /* Frameworks */,
@@ -78,12 +78,12 @@
 		E5DBE19A212E808E003AAB79 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E5DBE199212E808E003AAB79 /* Todoey.app */,
+				E5DBE199212E808E003AAB79 /* ColorOfLife.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E5DBE19B212E808E003AAB79 /* Todoey */ = {
+		E5DBE19B212E808E003AAB79 /* ColorOfLife */ = {
 			isa = PBXGroup;
 			children = (
 				E5DBE19C212E808E003AAB79 /* AppDelegate.swift */,
@@ -93,7 +93,7 @@
 				E5DBE1B3212F1E71003AAB79 /* Supporting Files */,
 				E5DBE1A8212E8090003AAB79 /* Info.plist */,
 			);
-			path = Todoey;
+			path = ColorOfLife;
 			sourceTree = "<group>";
 		};
 		E5DBE1B1212F1E28003AAB79 /* Controllers */ = {
@@ -135,9 +135,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E5DBE198212E808E003AAB79 /* Todoey */ = {
+		E5DBE198212E808E003AAB79 /* ColorOfLife */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E5DBE1AB212E8090003AAB79 /* Build configuration list for PBXNativeTarget "Todoey" */;
+			buildConfigurationList = E5DBE1AB212E8090003AAB79 /* Build configuration list for PBXNativeTarget "ColorOfLife" */;
 			buildPhases = (
 				450732310DA63DF137844C45 /* [CP] Check Pods Manifest.lock */,
 				E5DBE195212E808E003AAB79 /* Sources */,
@@ -149,9 +149,9 @@
 			);
 			dependencies = (
 			);
-			name = Todoey;
+			name = ColorOfLife;
 			productName = Todoey;
-			productReference = E5DBE199212E808E003AAB79 /* Todoey.app */;
+			productReference = E5DBE199212E808E003AAB79 /* ColorOfLife.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -169,7 +169,7 @@
 					};
 				};
 			};
-			buildConfigurationList = E5DBE194212E808E003AAB79 /* Build configuration list for PBXProject "Todoey" */;
+			buildConfigurationList = E5DBE194212E808E003AAB79 /* Build configuration list for PBXProject "ColorOfLife" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -182,7 +182,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E5DBE198212E808E003AAB79 /* Todoey */,
+				E5DBE198212E808E003AAB79 /* ColorOfLife */,
 			);
 		};
 /* End PBXProject section */
@@ -210,18 +210,22 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Todoey/Pods-Todoey-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/SwipeCellKit/SwipeCellKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwipeCellKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -446,7 +450,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E5DBE194212E808E003AAB79 /* Build configuration list for PBXProject "Todoey" */ = {
+		E5DBE194212E808E003AAB79 /* Build configuration list for PBXProject "ColorOfLife" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E5DBE1A9212E8090003AAB79 /* Debug */,
@@ -455,7 +459,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E5DBE1AB212E8090003AAB79 /* Build configuration list for PBXNativeTarget "Todoey" */ = {
+		E5DBE1AB212E8090003AAB79 /* Build configuration list for PBXNativeTarget "ColorOfLife" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E5DBE1AC212E8090003AAB79 /* Debug */,

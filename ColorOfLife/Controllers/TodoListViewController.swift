@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  Todoey
+//  ColorOfLife
 //
 //  Created by Aaron Lam on 8/22/18.
 //  Copyright © 2018 Aaron Lam Developer. All rights reserved.
@@ -14,18 +14,15 @@ class TodoListViewController: SwipeTableViewController {
     
     @IBOutlet weak var searchBar: UISearchBar!
     
+    let realm = try! Realm()
+    
     var todoItems: Results<Item>?
     var selectedCategory : Category? {
-        didSet {
-            loadItems()
-        }
+        didSet { loadItems() }
     }
-    
-    let realm = try! Realm()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.separatorStyle = .none
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -48,7 +45,6 @@ class TodoListViewController: SwipeTableViewController {
         searchBar.barTintColor = navBarColor
     }
     
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return todoItems?.count ?? 1;
     }
@@ -57,10 +53,12 @@ class TodoListViewController: SwipeTableViewController {
         let cell = super.tableView(tableView, cellForRowAt: indexPath)
         if let item = todoItems?[indexPath.row] {
             cell.textLabel?.text = item.title
+            // set gradient color in item cells
             if let color = UIColor(hexString: selectedCategory!.color)?.darken(byPercentage: CGFloat(indexPath.row) / CGFloat(todoItems!.count)) {
                 cell.backgroundColor = color
                 cell.textLabel?.textColor = ContrastColorOf(color, returnFlat: true)
             }
+            // set checkmark if item was checked
             cell.accessoryType = item.done ? .checkmark : .none
         } else {
             cell.textLabel?.text = "No Item was Added "
@@ -84,34 +82,38 @@ class TodoListViewController: SwipeTableViewController {
     
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
         var textField = UITextField()
-        
-        let alert = UIAlertController(title: "Add New Todoey Item", message: "", preferredStyle: .alert)
-        
-        let action = UIAlertAction(title: "Add Item", style: .default) { (action) in
-            if let currentCategory = self.selectedCategory {
-                do {
-                    try self.realm.write {
-                        if (!textField.text!.trimmingCharacters(in: .whitespaces).isEmpty) {
-                            let newItem = Item()
-                            newItem.title = textField.text!
-                            newItem.dateCreated = Date()
-                            currentCategory.items.append(newItem)
-                        }
-                    }
-                } catch {
-                    print("Error saving new items, \(error)")
-                }
-            }
-            self.tableView.reloadData()
-        }
-        
+        let alert = UIAlertController(title: "Add one Todo item!", message: "", preferredStyle: .alert)
+        // add text field in alert
         alert.addTextField { (alertTextField) in
-            alertTextField.placeholder = "Create new item"
+            alertTextField.placeholder = "Create item"
             textField = alertTextField
         }
-        
-        alert.addAction(action)
+        // put add action in alert
+        alert.addAction(UIAlertAction(title: "Add", style: .default) { (action) in
+                if let currentCategory = self.selectedCategory {
+                    do {
+                        try self.realm.write {
+                            if (!textField.text!.trimmingCharacters(in: .whitespaces).isEmpty) {
+                                self.addNewItem(name: textField.text!, category: currentCategory)
+                            }
+                        }
+                    } catch {
+                        print("Error saving new items, \(error)")
+                    }
+                }
+                self.tableView.reloadData()
+            }
+        )
+        // put cancel action in alert
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil))
         present(alert, animated: true, completion: nil)
+    }
+    
+    func addNewItem(name: String, category: Category) {
+        let newItem = Item()
+        newItem.title = name
+        newItem.dateCreated = Date()
+        category.items.append(newItem)
     }
     
     func loadItems() {

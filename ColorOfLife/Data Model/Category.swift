@@ -1,6 +1,6 @@
 //
 //  Category.swift
-//  Todoey
+//  ColorOfLife
 //
 //  Created by Aaron Lam on 8/23/18.
 //  Copyright © 2018 Aaron Lam Developer. All rights reserved.
