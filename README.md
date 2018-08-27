@@ -6,7 +6,7 @@ Color of Life is a task management iOS app. Users can store and manage their goa
 
 ## Built With
 
-* [Alamofire](https://github.com/Alamofire/Alamofire) - Used to HTTP request
+* [Alamofire](https://github.com/Alamofire/Alamofire) - Used to make HTTP request
 * [SwiftyJSON](https://github.com/SwiftyJSON/SwiftyJSON) - Used to fetch JSON data from RESTful API
 * [Chameleon](https://github.com/viccalexander/Chameleon) - Used to color my app
 * [Realm](https://realm.io/) - used to store user data locally for CRUD (create, read, update, delete) operations
