@@ -1,4 +1,4 @@
-## Color-of-Life
+## Color of Life
 
 ![appicon57x57 2x](https://user-images.githubusercontent.com/23665164/44631795-0145c080-a926-11e8-9c3d-4603944c3c4b.png)
 
